@@ -1,34 +1,55 @@
 #pragma once
+#include <iostream>
 #include <string>
 using namespace std;
 
 class Player 
 {
 public:
-    Player(string nickname);
+    Player(string nickname) : nickname(nickname), HP(0), MP(0), level(1), power(10), defence(10), accuracy(0), speed(0) {}
+    
 
     virtual void attack() = 0;
     void printPlayerStatus();
 
-    // getter 함수
-    string getJobName();
-    string getNickname();
-    int getLevel();
-    int getHP();
-    int getMP();
-    int getPower();
-    int getDefence();
-    int getAccuracy();
-    int getSpeed();
+    string getJobName() { return job_name; }
+    string getNickname() { return nickname; }
+    int getLevel() { return level; }
+    int getHP() { return HP; }
+    int getMP() { return MP; }
+    int getPower() { return power; }
+    int getDefence() { return defence; }
+    int getAccuracy() { return accuracy; }
+    int getSpeed() { return speed; }
 
-    // setter 함수
-    void setNickname(string nickname);
-    bool setHP(int HP);
-    bool setMP(int MP);
-    void setPower(int power);
-    void setDefence(int defence);
-    void setAccuracy(int accuracy);
-    void setSpeed(int speed);
+    void setNickname(string nickname)
+    {
+        this->nickname = nickname;
+    }
+    bool setHP(int HP)
+    {
+        this->HP = HP;
+    }
+    bool setMP(int MP)
+    {
+        this->MP = MP;
+    }
+    void setPower(int power)
+    {
+        this->power = power;
+    }
+    void setDefence(int defence)
+    {
+        this->defence = defence;
+    }
+    void setAccuracy(int accuracy)
+    {
+        this->accuracy = accuracy;
+    }
+    void setSpeed(int speed)
+    {
+        this->speed = speed;
+    }
 
 protected:
     string job_name;
