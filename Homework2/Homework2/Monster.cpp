@@ -40,6 +40,7 @@ void Monster:: setSpeed(int speed)
 
 void Monster::attack(Player* player)
 {
+    cout << endl;
     cout << name << " attack " << player->getNickname() << " !" << endl;
 
     int damage = power - player->getDefence();

@@ -31,6 +31,7 @@ int main() {
 
     cout << "선택: ";
     cin >> job_choice;
+    cout << endl;
 
     switch (job_choice) {
     case 1:
@@ -49,16 +50,24 @@ int main() {
         cout << "잘못된 입력입니다." << endl;
         return 1;
     }
+    player->printPlayerStatus();
+    cout << endl;
 
     cout << "생성할 몬스터의 이름을 적어주세요. : ";
     cin >> monsterName;
 
     Monster* monster = new Monster(monsterName);
 
-    //player->attack();
-    player->printPlayerStatus();
-    player->attack(monster);
+    while(player->getHP() > 0 && monster->getHP() > 0)
+    { 
+        player->attack(monster);
+        if (monster->getHP() < 1)
+            break;
 
+        monster->attack(player);
+        if (player->getHP() < 1)
+            break;
+    }
     delete player;
 
     return 0;

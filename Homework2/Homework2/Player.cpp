@@ -4,6 +4,67 @@
 
 using namespace std;
 
+Player::Player(string nickname) : nickname(nickname), HP(10), MP(0), level(1), power(15), defence(10), accuracy(0), speed(0) {}
+
+string  Player:: getJobName() { return job_name; }
+string Player:: getNickname() { return nickname; }
+int Player:: getLevel() { return level; }
+int Player:: getHP() { return HP; }
+int Player:: getMP() { return MP; }
+int Player:: getPower() { return power; }
+int Player:: getDefence() { return defence; }
+int Player:: getAccuracy() { return accuracy; }
+int Player:: getSpeed() { return speed; }
+
+void Player:: setNickname(string nickname)
+{
+    this->nickname = nickname;
+}
+bool Player:: setHP(int HP)
+{
+    if(HP > 0)
+    { 
+        this->HP = HP;
+        return true;
+    }
+    else
+    {
+        this->HP = 0;
+        return false;
+    }
+}
+bool Player:: setMP(int MP)
+{
+    if (MP > 0)
+    {
+        this->MP = MP;
+        return true;
+    }
+    else
+    {
+        this->MP = 0;
+        return false;
+    }
+}
+void Player:: setPower(int power)
+{
+    this->power = power;
+}
+void Player:: setDefence(int defence)
+{
+    this->defence = defence;
+}
+void Player:: setAccuracy(int accuracy)
+{
+    this->accuracy = accuracy;
+}
+void Player:: setSpeed(int speed)
+{
+    this->speed = speed;
+}
+
+
+
 void Player::printPlayerStatus() 
 {
     cout << "------------------------------------" << endl;
@@ -18,3 +79,4 @@ void Player::printPlayerStatus()
     cout << "¼Óµµ: " << speed << endl;
     cout << "------------------------------------" << endl;
 }
+

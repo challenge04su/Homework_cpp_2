@@ -20,8 +20,9 @@ void Warrior :: attack(Monster* monster)
 		damage = 1;
 	}
 
+	cout << endl;
 	cout << "검을 휘두른다. 피해라." << endl;
-	cout << job_name << "가 " << monster->getName() << "에게 " << damage << "를 입혔다!" << endl;
+	cout << job_name << "가 " << monster->getName() << "에게 " << damage << " 피해를 입혔다!" << endl;
 
 	bool isAlive = monster->setHP(monster->getHP() - damage);
 
