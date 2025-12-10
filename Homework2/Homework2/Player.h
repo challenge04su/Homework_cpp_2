@@ -3,6 +3,8 @@
 #include <string>
 using namespace std;
 
+class Monster;
+
 class Player 
 {
 public:
@@ -10,6 +12,7 @@ public:
     
 
     virtual void attack() = 0;
+    virtual void attack(Monster* monster) = 0;
     void printPlayerStatus();
 
     string getJobName() { return job_name; }
