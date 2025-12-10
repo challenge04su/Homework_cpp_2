@@ -8,5 +8,5 @@ class Magician : public Player
 {
 public:
 	Magician(string nickname);
-	void attack() override;
+	virtual void attack(Monster* monster) override;
 };

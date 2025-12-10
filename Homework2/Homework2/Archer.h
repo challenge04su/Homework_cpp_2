@@ -8,6 +8,6 @@ class Archer : public Player
 {
 public:
 	Archer(string nickname);
-	void attack() override;
+	virtual void attack(Monster* monster) override;
 };
 

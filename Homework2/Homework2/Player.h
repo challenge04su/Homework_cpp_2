@@ -11,8 +11,9 @@ public:
     Player(string nickname) : nickname(nickname), HP(0), MP(0), level(1), power(10), defence(10), accuracy(0), speed(0) {}
     
 
-    virtual void attack() = 0;
+   // virtual void attack() = 0;
     virtual void attack(Monster* monster) = 0;
+
     void printPlayerStatus();
 
     string getJobName() { return job_name; }
